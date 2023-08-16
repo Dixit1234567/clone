@@ -1,17 +1,42 @@
-public class Ex {
-    public static void main(String args[]) {
-        for (int i = 0; i < 10; i++) {
-            if (i == 4) {
-                break;
-            }
-        }
-        // The variable i is out of scope here; you can't access it in this context
+class Encap {
+    private String name;
+    private int roll;
+    private int age;
 
-        for (int j = 0; j < 10; j++) {
-            if (j == 4) {
-                continue;
-            }
-            System.out.println(j);
-        }
+    public int getAge() {
+        return age;
+    }
+
+    public int getRoll() {
+        return roll;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setAge(int a) {
+        age = a;
+    }
+
+    public void setRoll(int r) {
+        roll = r;
+    }
+
+    public void setName(String n) {
+        name = n;
+    }
+}
+
+public class Demo {
+    public static void main(String args[]) {
+        Encap e = new Encap();
+        e.setName("Dixit");
+        e.setRoll(10224);
+        e.setAge(10);
+
+        System.out.println("Name: " + e.getName());
+        System.out.println("Age: " + e.getAge());
+        System.out.println("Roll: " + e.getRoll());
     }
 }
